@@ -1,4 +1,4 @@
-# CHAKAL OBSERVATIONS · portfolio-cyber
+# CHAKAL OBSERVATIONS · portfolio-terminal
 
 Portfólio de **João Victor Paixão Zolim** (Red Team e Blue Team), navegado inteiramente por um terminal na tela. Visual inspirado em interfaces de terminal: fundo escuro, verde fósforo, scanlines.
 
@@ -15,12 +15,6 @@ npm run build && npm run preview   # build de produção com os mesmos headers d
 ```
 
 Se o projeto estiver numa pasta do Windows (`/mnt/c/...`) e o recarregamento automático não funcionar, use `VITE_POLLING=1 npm run dev`.
-
-## Deploy na Vercel
-
-1. Importar o repositório na Vercel.
-2. **Root Directory:** `client` · Framework: Vite (detectado sozinho).
-3. Os headers de segurança (CSP, HSTS, etc.) vêm de `client/vercel.json`.
 
 ## Comandos
 
