@@ -1,0 +1,109 @@
+@import "tailwindcss";
+@import "@fontsource/jetbrains-mono/latin-400.css";
+@import "@fontsource/jetbrains-mono/latin-700.css";
+
+@theme {
+  --color-void: #0a0a0a;
+  --color-panel: #0f1411;
+  --color-line: #1f2a22;
+  --color-phosphor: #33ff66;
+  --color-phosphor-dim: #1f9e41;
+  --color-muted: #8a9a8f;
+  --color-alert: #ff3b3b;
+  --color-amber: #ffb000;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-void);
+  color: var(--color-phosphor);
+  font-family: var(--font-mono);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-phosphor);
+  color: var(--color-void);
+}
+
+/* Scanlines discretas sobre a tela inteira */
+.scanlines::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.04) 0px,
+    rgba(255, 255, 255, 0.04) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  z-index: 50;
+}
+
+.glow {
+  text-shadow: 0 0 6px rgba(51, 255, 102, 0.45);
+}
+
+.cursor-block {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  background: var(--color-phosphor);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.glitch {
+  animation: glitch 150ms steps(2) 1;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(2px, -1px);
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    transform: translate(-2px, 1px);
+  }
+  100% {
+    transform: none;
+    filter: none;
+  }
+}
+
+/* ASCII escala com a largura da tela: 56 colunas sempre cabem */
+.ascii {
+  font-size: min(14px, calc((100vw - 32px) / 34));
+  line-height: 1.1;
+  white-space: pre;
+}
+
+.term-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
