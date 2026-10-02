@@ -1,0 +1,194 @@
+[
+  {
+    "repo": "zabbix-security-monitoring",
+    "alias": "zabbix",
+    "team": "blue",
+    "featured": true,
+    "title": "Zabbix Security Monitoring Lab",
+    "stack": ["Zabbix 7.0", "Docker", "MySQL 8", "Zabbix Agent", "PowerShell", "SMTP"],
+    "summary": {
+      "pt": "Zabbix 7.0 em Docker monitorando um host Windows com uma camada de observação de segurança.",
+      "en": "Zabbix 7.0 on Docker monitoring a Windows host with a security observation layer."
+    },
+    "highlights": {
+      "pt": [
+        "Itens para login falho (Event ID 4625), novo serviço (7045) e status do Windows Defender",
+        "Triggers por severidade: brute-force (High), novo serviço (Warning), Defender desativado (Disaster)",
+        "Alertas automáticos por e-mail via SMTP",
+        "Problemas reais documentados: charset do MySQL, binary log, rede container-host, falsos positivos"
+      ],
+      "en": [
+        "Items for failed logins (Event ID 4625), new services (7045) and Windows Defender status",
+        "Severity-based triggers: brute force (High), new service (Warning), Defender disabled (Disaster)",
+        "Automatic e-mail alerts over SMTP",
+        "Real issues documented: MySQL charset, binary log, container-host networking, false positives"
+      ]
+    }
+  },
+  {
+    "repo": "sec-dash-zabbix",
+    "alias": "secdash",
+    "team": "blue",
+    "featured": false,
+    "title": "Dashboard de Segurança Zabbix",
+    "stack": ["Python", "Flask", "Zabbix JSON-RPC API", "Chart.js"],
+    "summary": {
+      "pt": "Dashboard web com métricas e alertas das últimas 24 h, coletados pela API do Zabbix.",
+      "en": "Web dashboard showing the last 24 h of metrics and alerts pulled from the Zabbix API."
+    },
+    "highlights": {
+      "pt": [
+        "Gráficos e lista de alertas via API JSON-RPC do Zabbix",
+        "Arquitetura em camadas: domain, application, infrastructure, presentation",
+        "Vários hosts e itens por configuração"
+      ],
+      "en": [
+        "Charts and alert list through the Zabbix JSON-RPC API",
+        "Layered architecture: domain, application, infrastructure, presentation",
+        "Multiple hosts and items via configuration"
+      ]
+    }
+  },
+  {
+    "repo": "soar-triagem",
+    "alias": "soar",
+    "team": "blue",
+    "featured": true,
+    "title": "SOAR Triagem de Alertas",
+    "stack": ["Python", "Flask", "Redis (RQ)", "SQLite", "AbuseIPDB", "Slack", "Docker Compose"],
+    "summary": {
+      "pt": "Recebe alertas de SIEM por webhook, enriquece, classifica e escala automaticamente.",
+      "en": "Receives SIEM alerts via webhook, enriches, scores and escalates them automatically."
+    },
+    "highlights": {
+      "pt": [
+        "Webhook valida o payload, enfileira no Redis e responde 202 Accepted",
+        "Enriquecimento de IP com AbuseIPDB e severidade por regras de domínio",
+        "Escalonamento no Slack para alto risco, histórico em SQLite"
+      ],
+      "en": [
+        "Webhook validates the payload, queues it in Redis and answers 202 Accepted",
+        "IP enrichment with AbuseIPDB and rule-based severity",
+        "Slack escalation for high-risk alerts, history in SQLite"
+      ]
+    }
+  },
+  {
+    "repo": "checklist-hardening",
+    "alias": "hardening",
+    "team": "blue",
+    "featured": false,
+    "title": "Checklist de Hardening Linux",
+    "stack": ["Bash", "Linux", "SSH", "Firewall"],
+    "summary": {
+      "pt": "Script que audita o hardening de um Linux sem alterar o sistema.",
+      "en": "Script that audits Linux hardening without changing the system."
+    },
+    "highlights": {
+      "pt": [
+        "Verifica login root e senha no SSH, firewall ativo, atualizações e contas sem senha",
+        "Relatório PASS/WARN/FAIL com pontuação",
+        "Exit code pronto para cron e CI"
+      ],
+      "en": [
+        "Checks SSH root/password login, active firewall, pending updates and passwordless accounts",
+        "PASS/WARN/FAIL report with a score",
+        "Exit code ready for cron and CI"
+      ]
+    }
+  },
+  {
+    "repo": "leak-monitor",
+    "alias": "leak",
+    "team": "blue",
+    "featured": false,
+    "title": "Leak Monitor",
+    "stack": ["Node.js", "Bash", "cron", "XposedOrNot", "HaveIBeenPwned"],
+    "summary": {
+      "pt": "Monitora e-mails em bases de vazamento e alerta só sobre vazamentos novos.",
+      "en": "Watches e-mail addresses in breach databases and alerts only on new leaks."
+    },
+    "highlights": {
+      "pt": [
+        "Agendamento via cron com controle de estado entre execuções",
+        "Alertas em Slack e Discord apenas para vazamentos novos"
+      ],
+      "en": [
+        "cron scheduling with state kept between runs",
+        "Slack and Discord alerts for new leaks only"
+      ]
+    }
+  },
+  {
+    "repo": "pentest-findings-dash",
+    "alias": "findings",
+    "team": "red",
+    "featured": true,
+    "title": "Pentest Findings Dashboard",
+    "stack": ["Node.js", "Express", "Prisma", "PostgreSQL", "React", "Vite", "Tailwind CSS", "Docker"],
+    "summary": {
+      "pt": "Aplicação full stack para gestão de achados de pentest, no estilo DefectDojo simplificado.",
+      "en": "Full stack app to manage pentest findings, a simplified DefectDojo-style tool."
+    },
+    "highlights": {
+      "pt": [
+        "Parsers para Nmap, Nuclei e Burp Suite com severidade normalizada",
+        "Deduplicação por fingerprint: reimporta scans sem perder status nem notas",
+        "Acompanhamento de remediação, filtros e relatório em PDF"
+      ],
+      "en": [
+        "Parsers for Nmap, Nuclei and Burp Suite with normalized severity",
+        "Fingerprint deduplication: re-import scans without losing status or notes",
+        "Remediation tracking, filters and PDF report export"
+      ]
+    }
+  },
+  {
+    "repo": "visual-recon",
+    "alias": "recon",
+    "team": "red",
+    "featured": true,
+    "title": "Visual Recon",
+    "stack": ["Node.js", "Chromium headless", "Bash", "Kali Linux", "httpx"],
+    "summary": {
+      "pt": "Fingerprint visual da superfície de ataque, no estilo Aquatone/gowitness.",
+      "en": "Visual attack-surface fingerprinting, Aquatone/gowitness style."
+    },
+    "highlights": {
+      "pt": [
+        "Screenshot, título, status HTTP e tecnologias de cada host",
+        "Motor próprio de assinaturas: CMS, frameworks e painéis expostos (Jenkins, Grafana, phpMyAdmin...)",
+        "Galeria HTML com busca, filtro por tecnologia e lightbox"
+      ],
+      "en": [
+        "Screenshot, title, HTTP status and technologies for every host",
+        "Custom signature engine: CMS, frameworks and exposed panels (Jenkins, Grafana, phpMyAdmin...)",
+        "HTML gallery with search, technology filter and lightbox"
+      ]
+    }
+  },
+  {
+    "repo": "cyber-sec-journey",
+    "alias": "journey",
+    "team": "red",
+    "featured": false,
+    "title": "Cyber Sec Journey",
+    "stack": ["Kali Linux", "Linux", "Bash"],
+    "summary": {
+      "pt": "Documentação técnica de pentest: ferramentas do Kali e metodologia.",
+      "en": "Pentest technical docs: Kali tools and methodology."
+    },
+    "highlights": {
+      "pt": [
+        "Guias por ferramenta: Nmap, SQLMap, Hashcat, John the Ripper, Medusa, Netcat, Evil-WinRM...",
+        "Metodologia: Footprinting, Scanning e Exploitation; Black, Gray e White Box",
+        "SQL Injection, Google Hacking e Bash aplicado a pentest"
+      ],
+      "en": [
+        "Per-tool guides: Nmap, SQLMap, Hashcat, John the Ripper, Medusa, Netcat, Evil-WinRM...",
+        "Methodology: Footprinting, Scanning and Exploitation; Black, Gray and White Box",
+        "SQL Injection, Google Hacking and Bash for pentesting"
+      ]
+    }
+  }
+]
