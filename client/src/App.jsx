@@ -10,7 +10,6 @@ import { RESUMES } from './data/profile.js'
 import BootScreen from './boot/BootScreen.jsx'
 import CommandMap from './hints/CommandMap.jsx'
 import WelcomePopup from './hints/WelcomePopup.jsx'
-import { Analytics } from "@vercel/analytics/react";
 
 const registry = createRegistry(COMMANDS)
 const commandNames = registry.list().map((c) => c.name)
