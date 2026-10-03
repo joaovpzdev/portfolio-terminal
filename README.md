@@ -2,7 +2,6 @@
 
 Portfólio de **João Victor Paixão Zolim** (Red Team e Blue Team), navegado inteiramente por um terminal na tela. Visual inspirado em interfaces de terminal: fundo escuro, verde fósforo, scanlines.
 
-> Fase 1 (atual): front-end estático, publicável na Vercel. Fase 2: API Node + Express + Prisma + PostgreSQL.
 
 ## Rodando localmente (WSL)
 
